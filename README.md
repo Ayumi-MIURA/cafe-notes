@@ -8,7 +8,7 @@
 | email    | string | null: false |
 | password | string | null: false |
 | nickname | string | null: false |
-| birthbay | day    | null: false |
+| birthday | date   | null: false |
 
 ### Association
 
