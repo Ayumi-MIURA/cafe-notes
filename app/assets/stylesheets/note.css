@@ -1,0 +1,267 @@
+/* 投稿＆編集 */
+.form__wrapper, .cafe-post-main, .actions{
+  width: 50%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+.form__wrapper{
+  background-color: rgba( 204, 204, 204, 0.6 );
+}
+
+.post-inner {
+  background-image: url("coffee-2591782_1920.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: auto;
+}
+
+.form__text {
+  width: 150px;
+  margin-top: 5px;
+  height: 60px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  resize: both;
+}
+
+.form__text2 {
+  width: 150px;
+  margin-top: 5px;
+  height: 150px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  resize: both;
+}
+
+/* メイン表示 */
+.main {
+  background-image: url("coffee-2151200_1920.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: auto;
+  position: relative;
+}
+
+.greeting{
+  margin-bottom: 20px;
+  font-size: 30px;
+  color: #203744;
+}
+
+.greeting__link{
+  text-decoration: underline;
+  color: #203744;
+}
+
+.page-heading {
+  font-size: 30px;
+  margin-bottom: 28px;
+  background-color: rgba( 204, 210, 204, 0.6 );
+}
+
+.card__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  min-height: calc(100vh - 161px);
+}
+
+.card {
+  width: calc((100% - 150px) / 3);
+  margin-bottom: 40px;
+  background-color: rgba( 204, 220, 204, 0.6 );
+}
+
+.card__img {
+  margin: 10px 15px;
+}
+
+.card__title {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.card__summary {
+  font-size: 16px;
+}
+
+.card__user {
+  display: block;
+  font-size: 12px;
+  color: #203744;
+  text-align: right;
+  text-decoration: underline;
+}
+
+/* 詳細ページ */
+.main_tasting_note {
+  background-image: url("coffee-2734137_1920.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 200vh;
+}
+
+.note_card {
+  position: relative;
+}
+
+.note__container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 100fr 250fr 200fr 150fr;
+  grid-template-rows: 100px 250px 150px 150px;
+  position: absolute;
+  top: 40px;
+  left: 150px;
+}
+
+.item {
+  grid-auto-rows: 200px;
+  background-image: linear-gradient( 89.9deg,  rgba(208,246,255,1) 0.1%, rgba(255,237,237,1) 47.9%, rgba(255,255,231,1) 100.2% );
+  border-color: #bcdcc8;
+  padding: 10px;
+  border-radius: 8px;
+  border: 3px solid #bcdcc8;
+}
+
+.note__heading{
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.note__image {
+  grid-column: 1 / 2;
+}
+
+.noteimage {
+  width: 180px;
+  height: 220px;
+}
+
+.note__category {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+
+.note__overview {
+  grid-column: 2 / 3;
+  grid-row: 2 / 4;
+  align-items: center;
+  position: relative;
+}
+
+.note__textbody {
+  grid-column: 3 / 4;
+  grid-row: 1 / 4;
+}
+
+.note__wrapper{
+  min-height: calc(100vh - 161px);
+}
+
+.note__user{
+  display: block;
+  font-size: 16px;
+  color: #203744;
+  background-color: rgba( 204, 220, 204, 0.6 );
+  padding-top: 5px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.note__detail{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.note__detail1{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 33px auto;
+
+}
+
+.detail__title{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.note__manage{
+  display: flex;
+  justify-content: center;
+  padding-top: 16px;
+}
+
+.note__btn{
+  display: block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #203744;
+  text-decoration: none;
+  user-select: none;
+  background-color: rgba( 204, 220, 204, 0.6 );
+  border: 1px #6b8e23 solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  margin: 0 4px;
+}
+
+.note__btn:hover{
+  color: #fff;
+  background: #8fbc8f;
+}
+
+.main-note-comments {
+  width: 100vw;
+}
+
+.note__comments{
+  background-image: linear-gradient( 179.1deg,  rgba(247,238,238,1) -1.9%, rgba(247,202,201,1) 44.9%, rgba(145,168,208,1) 96.1% );
+  padding: 20px;
+  margin: 30px 0 40px 0;
+  width: 80vw;
+  align-items: center;
+  position: absolute;
+  top: 580px;
+  left: 150px;
+}
+
+.comments_lists{
+  padding-left: 20px;
+}
+
+.comments_list{
+  list-style-type: square;
+  padding-bottom: 5px;
+}
+
+.comment_user{
+  font-size: 16px;
+  color: #999;
+  text-decoration: underline;
+}

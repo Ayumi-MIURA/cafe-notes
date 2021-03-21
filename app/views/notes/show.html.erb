@@ -1,0 +1,96 @@
+<%= render "shared/header" %>
+
+<div class="main_tasting_note">
+  <%= link_to "POST by #{@note.user.nickname}", user_path(@note.user.id), class: :note__user %>
+  <% if user_signed_in? && current_user.id == @note.user_id %>
+    <div class="note__manage">
+      <%= link_to "編集する", edit_note_path(@note.id), class: :note__btn %>
+      <%= link_to "削除する", note_path(@note.id), method: :delete, class: :note__btn %>
+    </div>
+  <% end %>
+  <div class="note_card">
+    <div class="note__container">
+      <div class="item note__heading">
+        <div class="note__detail">
+          <p class="detail__title">Cafe Name</p>
+          <p class="detail__message">
+            <%= @note.cafe_name %>
+          </p>
+        </div>
+      </div>
+      <div class="item note__image">
+        <%= image_tag @note.image, class: :noteimage %>
+      </div>
+      <div class="item note__overview">
+        <div class="note__detail1">
+          <p class="detail__title">外観</p>
+          <p class="detail__message">
+            <%= @note.appearance %>
+          </p>
+        </div>
+        <div class="note__detail1">
+          <p class="detail__title">香り</p>
+          <p class="detail__message">
+            <%= @note.aroma %>
+          </p>
+        </div>
+        <div class="note__detail1">
+          <p class="detail__title">味</p>
+          <p class="detail__message">
+            <%= @note.taste %>
+          </p>
+        </div>
+        <div class="note__detail1">
+          <p class="detail__title">コク</p>
+          <p class="detail__message">
+            <%= @note.rich %>
+          </p>
+        </div>
+      </div>
+      <div class="item note__category">
+        <div class="note__detail">
+          <p class="detail__title">生産地</p>
+          <p class="detail__message">
+            <%= @note.geography.name %>
+          </p>
+        </div>
+        <div class="note__detail">
+          <p class="detail__title">加工法</p>
+          <p class="detail__message">
+            <%= @note.processing.name%>
+          </p>
+        </div>
+      </div>
+      <div class="item note__textbody">
+        <div class="note__detail">
+          <p class="detail__title">テイスティングノート</p>
+          <p class="detail__message">
+            <%= @note.tasting_note %>
+          </p>
+        </div>
+    </div>
+  </div>
+  <div class= "main-note-comments">
+    <div class="note__comments">
+        <% if user_signed_in? %>
+          <%= form_with model:[@note, @comment], local: true do |f|%>
+            <div class="field">
+              <%= f.label :text, "コメント" %><br />
+              <%= f.text_field :text %>
+            </div>
+            <div class="actions">
+              <%= f.submit "送信する", class: :form__btn %>
+            </div>
+          <% end %> 
+        <% end %>
+        <ul class="comments_lists">
+          <% @comments.each do |comment| %>
+            <li class="comments_list">
+              <%= comment.text %>
+              <%= link_to comment.user.nickname, user_path(comment.user), class: :comment_user %>
+            </li>
+          <% end %>
+        </ul>
+    </div>
+  </div>
+</div>

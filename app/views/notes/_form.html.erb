@@ -1,0 +1,113 @@
+<div class="cafe-post-contents">
+  <header class="cafe-post-header">
+    <%= link_to image_tag('Cafe_Notes.png' , size: '300x60'), root_path %>
+  </header>
+  <div class="cafe-post-main">
+    <%= form_with model: @note, local: true do |f|%>
+
+  <%# タイトル %>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <div class="weight-bold-text">
+          Cafe Name
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :cafe_name, class: :form__text, placeholder:"例) グアテマラ" %>
+      </div>
+    </div>
+  <%# /タイトル %>
+
+  <%# 画像 %>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <div class="weight-bold-text">
+          画像
+          <span class="indispensable">必須</span>
+        </div>
+        <div class="click-upload">
+          <%= f.file_field :image %>
+        </div>
+      </div>
+    </div>
+  <%# /画像 %>
+
+  <%# 概要 %>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <div class="weight-bold-text">
+          外観
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :appearance, class: :form__text, placeholder:"例) 栗色の外観" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <div class="weight-bold-text">
+          香り
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :aroma, class: :form__text, placeholder:"例) カカオのような香り" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <div class="weight-bold-text">
+          味
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :taste, class: :form__text, placeholder:"例) 微かなスパイス、レモンを感じる上品な酸味" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <div class="weight-bold-text">
+          コク
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :rich, class: :form__text, placeholder:"例) ココアパウダーのような舌触り" %>
+      </div>
+    </div>
+  </div>
+    <%# /概要 %>
+
+    <%# カテゴリー選択 %>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <div class="weight-bold-text">
+            生産地
+            <span class="indispensable">必須</span>
+          </div>
+            <%= f.collection_select(:geography_id, Geography.all, :id, :name, {}, class:"select-box") %>
+          <div class="weight-bold-text">
+            加工法
+            <span class="indispensable">必須</span>
+          </div>
+            <%= f.collection_select(:processing_id, Processing.all, :id, :name, {}, class:"select-box") %>
+        </div>
+      </div>
+    <%# /カテゴリー選択%>
+
+    <%# 感想自由記入%>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <div class="weight-bold-text">
+            テイスティングノート
+            <span class="indispensable"></span>
+          </div>
+          <%= f.text_area :tasting_note, class: :form__text2, placeholder:"感想など自由に書こう！" %>
+        </div>
+      </div>
+    <%# /感想自由記入%>
+
+      <div class="actions">
+        <%= f.submit "投稿する", class: :post__btn  %>
+      </div><br>
+    <% end %>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

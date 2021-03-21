@@ -1,0 +1,19 @@
+<%= render "shared/header" %>
+
+<div class="user-main">
+  <div class="user-inner">
+    <div class="user__wrapper">
+      <h2 class="page-heading">
+        <%= "　#{@user.nickname}さんのノート一覧" %>
+      </h2>
+      <div class="user__card">
+        <%= render partial: "notes/note", collection: @user.notes %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer-wrapper">
+  <div class="footer">
+    <p class="copyright">Copyright © Cafe Notes All rights reserved.</p>
+  </div>
+</div>

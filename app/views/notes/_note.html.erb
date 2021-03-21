@@ -1,0 +1,10 @@
+<div class="card">
+  <%= link_to image_tag(note.image, size: '400x400', class: :card__img ), note_path(note.id) %>
+  <div class="card__body">
+    <%= link_to note.cafe_name, note_path(note.id), class: :card__title%>
+    <p class="card__summary">
+      <%= note.tasting_note %>
+    </p>
+    <%= link_to "by #{note.user.nickname}", user_path(note.user.id), class: :card__user %>
+  </div>
+</div>

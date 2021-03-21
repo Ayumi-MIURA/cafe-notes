@@ -1,0 +1,15 @@
+<%= render "shared/header" %>
+<div class='nav-center'>
+  <%= form_with(url: search_note_path, local: true, method: :get, class: "search-form") do |form| %>
+    <input class='input-box' placeholder='キーワードから探す'>
+    <button class="search-button">
+      <%= image_tag "search.png", class:"search-icon" %>
+    </button>
+  <% end %>
+</div>
+
+<div class="contents row">
+  <% @notes.each do |note| %>
+    <%= render partial: "note", locals: { note: @note } %>
+  <% end %>
+</div>

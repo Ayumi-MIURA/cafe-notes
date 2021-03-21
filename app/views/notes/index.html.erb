@@ -1,0 +1,21 @@
+<%= render "shared/header" %>
+
+<div class="main">
+  <div class="inner">
+    <% if user_signed_in? %>
+      <div class="greeting">
+        <%= "　　ようこそ、"%>
+         <%= link_to "#{current_user.nickname}さん", user_path(current_user.id), class: :greeting__link%>
+      </div>
+    <% else %>
+    <div class="greeting">
+        <%= "　　ようこそ、ゲストさん"%>
+      </div>
+    <% end %>
+    <div class="card__wrapper">
+      <%= render partial: "note", collection: @notes %>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/footer" %>
