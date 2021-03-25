@@ -59,6 +59,7 @@
   margin-bottom: 20px;
   font-size: 30px;
   color: #203744;
+  background-color: rgba( 204, 210, 204, 0.6 );
 }
 
 .greeting__link{
@@ -99,6 +100,10 @@
 
 .card__summary {
   font-size: 16px;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 
 .card__user {
