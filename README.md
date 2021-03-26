@@ -31,6 +31,23 @@ https://cafe-notes.herokuapp.com/
 ### ・投稿の検索機能
 ### ・ユーザーのフォロー機能
 
+# DEMO
+## 新規登録画面
+[![Image from Gyazo](https://i.gyazo.com/082f8c737abe43a7bf71be5b78810676.jpg)](https://gyazo.com/082f8c737abe43a7bf71be5b78810676)
+
+## サインイン画面
+[![Image from Gyazo](https://i.gyazo.com/2406b2373eadf3f46bc4e4980d817129.jpg)](https://gyazo.com/2406b2373eadf3f46bc4e4980d817129)
+
+## トップ画面
+[![Image from Gyazo](https://i.gyazo.com/c1767387ca36d3da444e6f1deec6659c.jpg)](https://gyazo.com/c1767387ca36d3da444e6f1deec6659c)
+
+## 投稿詳細画面
+[![Image from Gyazo](https://i.gyazo.com/69247d85ea0082500e1d80c2230b3e46.jpg)](https://gyazo.com/69247d85ea0082500e1d80c2230b3e46)
+
+## 投稿者ページ
+[![Image from Gyazo](https://i.gyazo.com/fce30d9d3e26ba39acbaa24bb7d3d2eb.jpg)](https://gyazo.com/fce30d9d3e26ba39acbaa24bb7d3d2eb)
+
+
 # テーブル設計
 ## users テーブル
 
