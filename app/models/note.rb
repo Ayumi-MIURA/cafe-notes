@@ -2,6 +2,7 @@ class Note < ApplicationRecord
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_one_attached :image
+  has_many :favorites
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :geography
@@ -20,10 +21,14 @@ class Note < ApplicationRecord
   validates :geography_id, :processing_id, numericality: { other_than: 0 }
 
   def self.search(search)
-    if search != ''
+    if search != ""
       Note.where('cafe_name LIKE(?)', "%#{search}%")
     else
       Note.all
     end
+  end
+
+  def favorited_by?(user)
+    favorites.where(user_id: user.id).exists?
   end
 end

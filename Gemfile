@@ -69,3 +69,4 @@ gem 'active_hash'
 gem 'ransack'
 gem "gretel"
 gem "aws-sdk-s3", require: false
+gem 'jquery-rails'

@@ -2,9 +2,14 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      ActionCable.server.broadcast 'comment_channel', content: @comment
+      respond_to do |format|
+        format.html { redirect_to note_path(params[:note_id]) }
+        format.json
+      end
     else
-      render 'notes/show'
+      @note = @comment.note
+      @comments = @note.comments
+      render :"notes/show"
     end
   end
 

@@ -10,4 +10,6 @@ class User < ApplicationRecord
 
   has_many :comments
   has_many :notes
+  has_many :favorites
+  has_many :favorite_notes, through: :favorites, source: :note
 end
