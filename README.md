@@ -12,7 +12,7 @@ https://cafe-notes.herokuapp.com/
 # テスト用アカウント
 | Email       | password |
 | ----------- | -------- |
-| test3@test3 | a123456  |
+| test2@test2 | a123456  |
 
 # 利用方法
 テストアカウントでログイン→ヘッダー右上から「New Note」ボタン押下→投稿情報入力→投稿完了
